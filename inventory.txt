@@ -1,0 +1,2 @@
+xrdevice1 ansible_host=172.18.87.99 ansible_connection=network_cli ansible_network_os=iosxr ansible_user= ansible_ssh_pass=
+xrdevice2 ansible_host=172.18.87.100 ansible_connection=network_cli ansible_network_os=iosxr ansible_user= ansible_ssh_pass=

@@ -1,0 +1,3 @@
+[configuration]
+webex_token = 
+webex_roomName = Personal Space

@@ -1,0 +1,19 @@
+--- 
+- name: test
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: ansible-test
+    iosxr_command:
+     commands:
+     - sh logging | i EOBC heartbeat failure
+    when: ansible_network_os == 'iosxr'
+    register: output
+  - debug:
+     var: output.stdout_lines
+  
+  - name: copy output to file
+    copy :
+     content: "{{output.stdout_lines}}"
+     dest: "{{inventory_hostname}}_log.txt"
+    delegate_to: localhost
